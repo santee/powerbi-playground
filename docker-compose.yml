@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  powerbiplayground:
+    image: powerbiplayground
+    build:
+      context: ./PowerBiPlayground
+      dockerfile: Dockerfile
