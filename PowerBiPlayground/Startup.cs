@@ -6,6 +6,7 @@ namespace PowerBiPlayground
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
 
+    using PowerBiPlayground.Embedded;
 
     public class Startup
     {
@@ -19,15 +20,18 @@ namespace PowerBiPlayground
                           .AddUserSecrets<Startup>();
 
             this.Configuration = builder.Build();
-
-            var settings = this.Configuration.GetSection("Powerbi").Get<Settings>();
         }
 
-        public IConfigurationRoot Configuration { get; }
+        private IConfigurationRoot Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var settings = this.Configuration.GetSection("Powerbi").Get<Settings>();
+            services.AddSingleton(settings);
+
+            services.AddScoped<AccessTokenQuery>();
+
             services.AddMvc();
 
             // In production, the Angular files will be served from this directory
