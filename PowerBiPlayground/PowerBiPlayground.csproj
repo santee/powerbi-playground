@@ -12,11 +12,13 @@
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
     <NoWin32Manifest>true</NoWin32Manifest>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <UserSecretsId>ad4b0d21-8727-4240-85cf-258e67c92d11</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.0.0" />
+    <PackageReference Include="Microsoft.PowerBI.Api" Version="2.0.12" />
   </ItemGroup>
 
   <ItemGroup>
