@@ -18,7 +18,7 @@ export class PowerbiContainerComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.embedConfig$ = this.http.get('api/powerbi/config').map(x => deserialize(x, EmbedConfig));
+    this.embedConfig$ = this.http.get('api/powerbi/token').map(x => deserialize(x, EmbedConfig));
   }
 
 }

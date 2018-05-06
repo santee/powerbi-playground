@@ -20,6 +20,11 @@ export class PowerbiHostComponent implements OnInit {
   @Input()
   public set config(value: EmbedConfig) {
     this.embedConfig = value;
+
+    if (!value) {
+      return;
+    }
+
     this.render();
   }
 
@@ -33,6 +38,7 @@ export class PowerbiHostComponent implements OnInit {
   }
 
   public render() {
+
     const config: IEmbedConfiguration = {
       type: 'report',
       tokenType: models.TokenType.Embed,
