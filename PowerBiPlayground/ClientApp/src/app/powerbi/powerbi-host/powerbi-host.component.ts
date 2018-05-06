@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectionStrategy, ElementRef, ViewChild, Inpu
 import { PowerbiService } from '../powerbi-service.service';
 import { IEmbedConfiguration, Embed } from 'embed';
 import { models } from 'powerbi-client';
-import * as ec from '../embed-config';
+import { EmbedConfig } from '../embed-config';
 
 @Component({
   selector: 'app-powerbi-host',
@@ -15,16 +15,16 @@ export class PowerbiHostComponent implements OnInit {
   @ViewChild('powerbihost')
   private host: ElementRef;
 
-  private embedConfig: ec.EmbedConfig;
+  private embedConfig: EmbedConfig;
 
   @Input()
-  public get config() {
-    return this.embedConfig;
-  }
-
-  public set config(value: ec.EmbedConfig) {
+  public set config(value: EmbedConfig) {
     this.embedConfig = value;
     this.render();
+  }
+
+  public get config() {
+    return this.embedConfig;
   }
 
   constructor(private powerbi: PowerbiService) { }
