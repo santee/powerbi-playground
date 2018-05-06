@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { PowerbiHostComponent } from "./powerbi-host/powerbi-host.component";
+import { PowerbiContainerComponent } from './powerbi-container/powerbi-container.component';
 
 const routes: Routes = [
-  { path: 'powerbi', component: PowerbiHostComponent }
+  { path: 'powerbi', component: PowerbiContainerComponent }
 ];
 
 @NgModule({
